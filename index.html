@@ -1,0 +1,65 @@
+<!--
+ * @Author: atp
+ * @Date: 2020-07-17 16:46:40
+ * @LastEditors: S.H.I.E.L.D
+ * @LastEditTime: 2020-08-20 11:21:02
+ * @FilePath: \测试\js\切换背景图片.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hail Hydra</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url('images/1.jpg');
+        }
+
+        #mask {
+            background-color: rgba(255, 255, 255, 0.3);
+
+            height: 200px;
+            text-align: center;
+        }
+
+        #mask img {
+            width: 200px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body id="bd">
+    <div id="mask">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+    </div>
+    <script>
+        function my$(id){return document.getElementById(id);};
+        var divobj = my$('mask');
+        var imgobj=divobj.children;
+        for (var i=0;i<imgobj.length;i++){
+            
+            imgobj[i].onclick = function (){
+                
+                document.body.style.backgroundImage="url("+this.src+")";
+            }
+
+        }
+        
+        
+
+    </script>
+
+</body>
+
+</html>
